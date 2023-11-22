@@ -7,6 +7,11 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>Persistence.Empleado</class>
         <class>Persistence.Fichaje</class>
+        <class>TPI.Model.Persona</class>
+        <class>TPI.Model.Cliente</class>
+        <class>TPI.Model.Tecnico</class>
+        <class>TPI.Model.Especialidad</class>
+        <class>TPI.Model.Incidente</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url"  value="jdbc:mysql://localhost:3306/db_argprog?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
