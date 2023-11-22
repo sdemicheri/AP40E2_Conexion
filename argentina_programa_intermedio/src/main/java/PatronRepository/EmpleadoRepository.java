@@ -39,9 +39,10 @@ public class EmpleadoRepository {
 
 
     public List<Empleado> buscarPorNombre(String nombre) {
-        TypedQuery<Empleado> consulta = em.createQuery("select e from Empleado e where e.nombre= :nombre",
+        TypedQuery<Empleado> consulta = em.createQuery(
+                "select e from Empleado e where e.nombre= %:nombrex%",
                 Empleado.class);
-        consulta.setParameter("nombre", nombre);
+        consulta.setParameter("nombrex", nombre);
         return consulta.getResultList();
     }
 

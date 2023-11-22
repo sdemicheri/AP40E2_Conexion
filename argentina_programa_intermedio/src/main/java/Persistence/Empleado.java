@@ -1,5 +1,6 @@
 package Persistence;
 
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,5 +31,9 @@ public class Empleado {
 
     public Long getId() {
         return id;
+    }
+
+    public String toString() {
+        return this.getNombre();
     }
 }
