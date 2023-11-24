@@ -10,4 +10,14 @@ public class Especialidad {
     private long id;
 
     private String nombre;
+    @ManyToOne(targetEntity = Aplicacion.class, cascade= CascadeType.ALL, fetch=FetchType.LAZY )
+    private Aplicacion aplicacion;
+
+    public Especialidad(String nombre) {
+        this.nombre=nombre;
+    }
+
+    public Especialidad() {
+    }
+
 }

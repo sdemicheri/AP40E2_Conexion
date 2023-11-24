@@ -29,6 +29,7 @@ public class PersonaController {
         Cliente cliente = new Cliente();
         cliente.setNombre(nombreCliente);
 
+
         pr.getEm().getTransaction().begin();
         pr.insertar(cliente);
         pr.getEm().getTransaction().commit();
@@ -59,7 +60,11 @@ public class PersonaController {
 
     public Cliente buscarClienteId(long nroCliente) {
         Cliente cliente = pr.buscarUno(nroCliente);
-        System.out.println(cliente);
+        if(cliente!=null) {
+            System.out.println(cliente);
+        }else{
+            System.out.println("El cliente no existe");
+        }
         return cliente;
     }
 }

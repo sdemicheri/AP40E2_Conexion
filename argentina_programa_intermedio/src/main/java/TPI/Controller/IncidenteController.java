@@ -22,10 +22,15 @@ public class IncidenteController {
     }
 
     public void agregarIncidente(Cliente cliente) {
-        Incidente inc= new Incidente(cliente);
+        if(cliente!=null) {
+            Incidente inc = new Incidente();
+            inc.setCliente(cliente);
 
-        ir.getEm().getTransaction().begin();
-        ir.insertar(inc);
-        ir.getEm().getTransaction().commit();
+            ir.getEm().getTransaction().begin();
+            ir.insertar(inc);
+            ir.getEm().getTransaction().commit();
+        }else{
+            System.out.println("No puedo registrar el incidente");
+        }
     }
 }

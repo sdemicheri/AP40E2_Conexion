@@ -12,14 +12,18 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
         <class>TPI.Model.Tecnico</class>
         <class>TPI.Model.Especialidad</class>
         <class>TPI.Model.Incidente</class>
+        <class>TPI.Model.Aplicacion</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url"  value="jdbc:mysql://localhost:3306/db_argprog?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="admin"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.password" value="admin"/>
-            <property name="javax.persistence.schema-generation.database.action" value="create"/>
-            <!--property name="eclipselink.ddl-generation" value="create-or-extend-tables"/-->
+            <!--property
+                    name="javax.persistence.schema-generation.database.action"
+                    value="create"/-->
+            <property name="eclipselink.ddl-generation"
+                      value="create-or-extend-tables"/>
         </properties>
     </persistence-unit>
 </persistence>

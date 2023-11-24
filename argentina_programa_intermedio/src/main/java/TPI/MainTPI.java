@@ -1,9 +1,11 @@
 package TPI;
 
 import PatronRepository.EmpleadoRepository;
+import TPI.Controller.EspecialidadController;
 import TPI.Controller.IncidenteController;
 import TPI.Controller.PersonaController;
 import TPI.Model.Cliente;
+import TPI.Model.Especialidad;
 import TPI.Repository.IncidenteRepository;
 import TPI.Repository.PersonaRepository;
 
@@ -15,7 +17,9 @@ import java.util.Scanner;
 public class MainTPI {
 
     public static EntityManager getEntityManager(){
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA_PU");
+        EntityManagerFactory factory =
+                Persistence.createEntityManagerFactory(
+                                "JPA_PU");
         EntityManager manager = factory.createEntityManager();
         return manager;
     }
@@ -30,6 +34,10 @@ public class MainTPI {
         IncidenteController ic = new IncidenteController();
         //seteando el entityManager al repository
         ic.getIr().setEm(em);
+
+        EspecialidadController ec = new EspecialidadController();
+        //seteando el entityManager al repository
+        ec.getIr().setEm(em);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -60,6 +68,9 @@ public class MainTPI {
                     break;
                 case 4:
                    // mostrarTecnicos();
+                    break;
+                case 5:
+                    ec.agregarEspecialidad();
                     break;
                 case 6:
                     pc.mostrarClientes();
